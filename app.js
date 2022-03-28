@@ -688,6 +688,7 @@ function ara (value1,value2){
         //var block = document.getElementById("main__containerdevam");
         var blocks=document.getElementById(gridcounter);
         blocks.innerHTML = "<span class = 'span1' >"+urlist[i][1]+"</span>";
+        //blocks.innerHTML = "<span class='tooltiptext'>Tooltip text</span>";
         //blocks.innerHTML = "<span class = 'span1' >"+urlist[i][0]+"<br>"+urlist[i][1]+"</span>";
         blocks.appendChild(image2);
         blocks.appendChild(img);
