@@ -363,11 +363,12 @@ p1{
   position: relative ;
   top: 260px;
   left: -20px;
-  background: rgba(10, 150, 238, 0.72);
+  /*background: rgba(10, 150, 238, 0.72);*/
   visibility: hidden;
   opacity: 0;
   z-index: 1;
   transition: opacity .2s, visibility .2s;
+  line-height: 0px;
 }
 
 .grid-item:hover .span1 {
