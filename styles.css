@@ -280,17 +280,22 @@ p1{
   z-index: 1;
   width: 100%;
   max-width: 1300px;
-  padding: 0 50px;
+  /*padding: 0 50px;*/
   
 }
 .main__containerdevam {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr); 
   background-color: #fffdf6;
   background-image: url(https://d1glcu56fxkf6q.cloudfront.net/statics/2022-02-25/images/smoke-center-SM.jpg);
-  margin: 50px auto;
+  /*margin: 50px auto;*/
   height: 70%;
   width: 100%;
   /*padding: 20px 50px;*/
-  overflow-y: auto; 
+  overflow-y: auto;
+  
 }
 
 .textberkay{
@@ -299,37 +304,87 @@ p1{
   position: relative;
 
 }
+
 .main__containerdevam img{
   width: 225px;
   height: 328px;
-  float: left;
+  /*float: left;*/
   /*margin-top: 20px;*/
   /*padding: 5px;*/
   /*border: 3px solid #73AD21;*/
-  margin: 10px 0;
-  margin-left: 40px;
-  margin-top: 40px;
+  position: relative;
+  bottom: 67px;
+  right: 17px;
 }
-#image2{
+
+
+.main__containerdevam #image2{
   width: 50px;
   height: 50px;
-  position: relative;
-  float: left;
-  top: 300px;
-  right: 180px;
+  position:relative;
+  left: 70px;
+  top: 280px;
+  z-index: 1;
   border-radius:70%;
   border: 0.5px solid #f87a13;
-
 }
+
+
+
 .main__containerdevam h1{
   color: #de5100;
   margin-left: 750px;
 }
 
-/*****************************************************************/
+
+/******************************* GRID **********************************/
+:root {
+  --grid-cols: 1;
+  --grid-rows: 1;
+  
+}
+
+
+.grid-item {
+  padding: 1em;
+  border: 1px solid #ddd;
+  text-align: center;
+  width: 225px;
+  height: 328px;
+  margin-left: 60px;
+  margin-top: 30px;
+}
+
+/*********************************************************************/
+
+.main__containerdevam span{
+  color: #ff9900;
+  font-size: 10px;
+  position: relative ;
+  top: 260px;
+  left: -20px;
+  background: rgba(10, 150, 238, 0.72);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity .2s, visibility .2s;
+}
+
+.grid-item:hover .span1 {
+  visibility: visible;
+  opacity: 1;
+}
 
 
 
+
+
+
+
+
+
+
+/*************************************************************************/
 h2 {
   margin: 16px;
 }

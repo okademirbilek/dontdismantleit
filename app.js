@@ -644,10 +644,12 @@ function ara (value1,value2){
   if (value1!==value2){
     document.getElementById("main__containerdevam").innerHTML = "";//clearing div 
     //query operations
+    makeRows(4,5);
     var arrayLength = activities.length;
     var arrayWidth  = 6;
     //console.log(arrayLength);
     //var ekran=[]
+    var gridcounter= 0;
     for (var i = 0; i < arrayLength; i++) {
       //console.log(myStringArray[i]);
       var counter = 0;
@@ -669,21 +671,35 @@ function ara (value1,value2){
         //console.log(counter);
       }  
       if (counter>1){
+        gridcounter=gridcounter+1;
         console.log(activities[i][0]," ",activities[i][1]);
         //ekran[i]=activities[i];
         //ekran.push(activities[i][0],activities[i][1]);
         console.log(urlist[i][2]);
         
         //Yöntem 1 
-        var img=document.createElement("img");
+        //var img=document.createElement("img");
+        var img = new Image(); 
         var image2 = new Image();
         img.src = urlist[i][2];
         img.id="imageclass";
         image2.src = urlist[i][3];
         image2.id = "image2";
-        var block = document.getElementById("main__containerdevam");
-        block.appendChild(img);
-        block.appendChild(image2);
+        //var block = document.getElementById("main__containerdevam");
+        var blocks=document.getElementById(gridcounter);
+        blocks.innerHTML = "<span class = 'span1' >"+urlist[i][1]+"</span>";
+        blocks.appendChild(image2);
+        blocks.appendChild(img);
+        
+        
+    
+    
+        
+        //block.appendChild(img);
+        //block.appendChild(image2);
+       
+        //block2.appendChild()
+
         
         
         
@@ -721,8 +737,20 @@ function ara (value1,value2){
   }
 }
 
+function makeRows(rows, cols) {
+  main__containerdevam.style.setProperty('--grid-rows', rows);
+  main__containerdevam.style.setProperty('--grid-cols', cols);
+  for (c = 0; c < (rows * cols); c++) {
+    let cell = document.createElement("div");
+    //cell.innerText = (c + 1);
+    cell.id=(c+1);
+    main__containerdevam.appendChild(cell).className = "grid-item";
+   
+  };
+};
+
 document.getElementById("btn").onclick = function() {
-  ara(depo[0],depo2[0]);
+  ara(depo[0],depo2[0]); 
 }
 
 
