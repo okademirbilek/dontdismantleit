@@ -647,8 +647,6 @@ function ara (value1,value2){
     makeRows(4,5);
     var arrayLength = activities.length;
     var arrayWidth  = 6;
-    //console.log(arrayLength);
-    //var ekran=[]
     var gridcounter= 0;
     for (var i = 0; i < arrayLength; i++) {
       //console.log(myStringArray[i]);
@@ -673,52 +671,20 @@ function ara (value1,value2){
       if (counter>1){
         gridcounter=gridcounter+1;
         console.log(activities[i][0]," ",activities[i][1]);
-        //ekran[i]=activities[i];
-        //ekran.push(activities[i][0],activities[i][1]);
         console.log(urlist[i][2]);
         
         //Yöntem 1 
-        //var img=document.createElement("img");
         var img = new Image(); 
         var image2 = new Image();
         img.src = urlist[i][2];
         img.id="imageclass";
         image2.src = urlist[i][3];
         image2.id = "image2";
-        //var block = document.getElementById("main__containerdevam");
         var blocks=document.getElementById(gridcounter);
         blocks.innerHTML = "<span class = 'span1' >"+urlist[i][1]+"</span>";
-        //blocks.innerHTML = "<span class='tooltiptext'>Tooltip text</span>";
-        //blocks.innerHTML = "<span class = 'span1' >"+urlist[i][0]+"<br>"+urlist[i][1]+"</span>";
         blocks.appendChild(image2);
         blocks.appendChild(img);
         
-        
-    
-    
-        
-        //block.appendChild(img);
-        //block.appendChild(image2);
-       
-        //block2.appendChild()
-
-        
-        
-        
-        
-
-        //yöntem2
-        //var image = new Image();
-        //var image2 = new Image();
-        //image.src = urlist[i][2];
-        //image2.src = "images/roboust.jpg";
-        //image.id = "image";
-        //image2.id = "image2";
-        //image2.class ="imagex";
-        //var parent = document.getElementById("main__containerdevam");
-        //parent.innerHTML +="<p10 class='textberkay'>"+activities[i][0]+" "+activities[i][1]+"</p10>";
-        //parent.append(image);
-        //parent.append(image2);
       
         
         
@@ -726,10 +692,6 @@ function ara (value1,value2){
         //console.log("2den kucuk");
       } 
     }
-    //console.log(ekran);
-    //document.getElementById("main__containerdevam").innerHTML= ekran;
-    //document.getElementById("main__containerdevam").style.color = "orange";
-    //document.getElementById("main__containerdevam").style.fontSize = "larger"
     
     
 
@@ -754,6 +716,42 @@ function makeRows(rows, cols) {
 document.getElementById("btn").onclick = function() {
   ara(depo[0],depo2[0]); 
 }
+
+
+function makeRows2(rows, cols) {
+  main__containerdevam2.style.setProperty('--grid-rows', rows);
+  main__containerdevam2.style.setProperty('--grid-cols', cols);
+  for (c = 0; c < (rows * cols); c++) {
+    let cell = document.createElement("div");
+    //cell.innerText = (c + 1);
+    cell.id=(c+1);
+    main__containerdevam2.appendChild(cell).className = "grid-item";
+   
+  };
+};
+function makeRows3(rows, cols) {
+  main__containerdevam3.style.setProperty('--grid-rows', rows);
+  main__containerdevam3.style.setProperty('--grid-cols', cols);
+  for (c = 0; c < (rows * cols); c++) {
+    let cell = document.createElement("div");
+    //cell.innerText = (c + 1);
+    cell.id=(c+1);
+    main__containerdevam3.appendChild(cell).className = "grid-item";
+   
+  };
+};
+function makeRows4(rows, cols) {
+  main__containerdevam4.style.setProperty('--grid-rows', rows);
+  main__containerdevam4.style.setProperty('--grid-cols', cols);
+  for (c = 0; c < (rows * cols); c++) {
+    let cell = document.createElement("div");
+    //cell.innerText = (c + 1);
+    cell.id=(c+1);
+    main__containerdevam4.appendChild(cell).className = "grid-item";
+   
+  };
+};
+
 
 
 let combats = [
@@ -791,6 +789,9 @@ let combats = [
 function necklace (value1,value2,value3,value4){
   console.log(value1,value2,value3,value4);
   if(value1!==value2 && value3!==value4){
+    //query operations
+    makeRows2(4,5);
+    var gridcounter= 0;
     for (var i = 0; i < 27; i++) {
       var counter1 = 0;
       for (var j = 2; j < 4; j++) {
@@ -820,11 +821,8 @@ function necklace (value1,value2,value3,value4){
         }
         //console.log(caunter2);
         if (caunter2==1){
+          gridcounter=gridcounter+1;
           console.log("perfect combat stats and 1 engraving matched");
-          //console.log(activities[k][0]," ",activities[k][1]);
-          //console.log(combats[k][2]," ",combats[k][3]);
-          //console.log(combats[i][0]," ",combats[i][1]);
-          //console.log(combats[i][2]," ",combats[i][3]);
           console.log(i);
           console.log(combats[i]);
           var img=document.createElement("img");
@@ -833,16 +831,14 @@ function necklace (value1,value2,value3,value4){
           img.id="imageclass";
           image2.src = urlist[i][3];
           image2.id = "image2";
-          var block = document.getElementById("main__containerdevam2");
-          block.appendChild(img);
-          block.appendChild(image2);
+          var blocks=document.getElementById(gridcounter);
+          blocks.innerHTML = "<span class = 'span1' >"+urlist[i][1]+"</span>";
+          blocks.appendChild(img);
+          blocks.appendChild(image2);
           caunter2=0;
         }else if(caunter2==2){
+          gridcounter=gridcounter+1;
           console.log("perfect combat stats and perfect engravings");
-          //console.log(activities[k][0]," ",activities[k][1]);
-          //console.log(combats[k][2]," ",combats[k][3]);
-          //console.log(combats[i][0]," ",combats[i][1]);
-          //console.log(combats[i][2]," ",combats[i][3]);
           console.log(i);
           console.log(combats[i]);
           var img=document.createElement("img");
@@ -851,9 +847,10 @@ function necklace (value1,value2,value3,value4){
           img.id="imageclass";
           image2.src = urlist[i][3];
           image2.id = "image2";
-          var block = document.getElementById("main__containerdevam2");
-          block.appendChild(img);
-          block.appendChild(image2);
+          var blocks=document.getElementById(gridcounter);
+          blocks.innerHTML = "<span class = 'span1' >"+urlist[i][1]+"</span>";
+          blocks.appendChild(img);
+          blocks.appendChild(image2);
           caunter2=0;
         }else if(caunter2==0){
           //console.log("good combat stats but no engravings matched")
@@ -915,6 +912,8 @@ let combatsEar = [
 function earring (value1,value2,value3){
   console.log(value1,value2,value3);
   if( value2!==value3){
+    makeRows3(4,5);
+    var gridcounter= 0;
     for (var i = 0; i < 27; i++) {
       var counter1 = 0;
       for (var j = 2; j < 4; j++) {
@@ -937,6 +936,7 @@ function earring (value1,value2,value3){
         }
         //console.log(caunter2);
         if (caunter2==1){
+          gridcounter=gridcounter+1;
           console.log("perfect combat stats and 1 engraving matched");
           console.log(combatsEar[i]);
           var img=document.createElement("img");
@@ -945,11 +945,13 @@ function earring (value1,value2,value3){
           img.id="imageclass";
           image2.src = urlist[i][3];
           image2.id = "image2";
-          var block = document.getElementById("main__containerdevam3");
-          block.appendChild(img);
-          block.appendChild(image2);
+          var blocks=document.getElementById(gridcounter);
+          blocks.innerHTML = "<span class = 'span1' >"+urlist[i][1]+"</span>";
+          blocks.appendChild(img);
+          blocks.appendChild(image2);
           caunter2=0;
         }else if(caunter2==2){
+          gridcounter=gridcounter+1;
           console.log("perfect combat stats and perfect engravings");
           console.log(combatsEar[i]);
           var img=document.createElement("img");
@@ -958,9 +960,10 @@ function earring (value1,value2,value3){
           img.id="imageclass";
           image2.src = urlist[i][3];
           image2.id = "image2";
-          var block = document.getElementById("main__containerdevam3");
-          block.appendChild(img);
-          block.appendChild(image2);
+          var blocks=document.getElementById(gridcounter);
+          blocks.innerHTML = "<span class = 'span1' >"+urlist[i][1]+"</span>";
+          blocks.appendChild(img);
+          blocks.appendChild(image2);
           caunter2=0;
         }else if(caunter2==0){
           //console.log("good combat stats but no engravings matched")
@@ -1017,6 +1020,8 @@ let combatsring = [
 function ring (value1,value2,value3){
   console.log(value1,value2,value3);
   if( value2!==value3){
+    makeRows4(4,5);
+    var gridcounter= 0;
     for (var i = 0; i < 27; i++) {
       var counter1 = 0;
       for (var j = 2; j < 4; j++) {
@@ -1039,6 +1044,7 @@ function ring (value1,value2,value3){
         }
         //console.log(caunter2);
         if (caunter2==1){
+          gridcounter=gridcounter+1;
           console.log("perfect combat stats and 1 engraving matched");
           console.log(combatsring[i]);
           var img=document.createElement("img");
@@ -1047,11 +1053,13 @@ function ring (value1,value2,value3){
           img.id="imageclass";
           image2.src = urlist[i][3];
           image2.id = "image2";
-          var block = document.getElementById("main__containerdevam4");
-          block.appendChild(img);
-          block.appendChild(image2);
+          var blocks=document.getElementById(gridcounter);
+          blocks.innerHTML = "<span class = 'span1' >"+urlist[i][1]+"</span>";
+          blocks.appendChild(img);
+          blocks.appendChild(image2);
           caunter2=0;
         }else if(caunter2==2){
+          gridcounter=gridcounter+1;
           console.log("perfect combat stats and perfect engravings");
           console.log(combatsring[i]);
           var img=document.createElement("img");
@@ -1060,9 +1068,10 @@ function ring (value1,value2,value3){
           img.id="imageclass";
           image2.src = urlist[i][3];
           image2.id = "image2";
-          var block = document.getElementById("main__containerdevam4");
-          block.appendChild(img);
-          block.appendChild(image2);
+          var blocks=document.getElementById(gridcounter);
+          blocks.innerHTML = "<span class = 'span1' >"+urlist[i][1]+"</span>";
+          blocks.appendChild(img);
+          blocks.appendChild(image2);
           caunter2=0;
         }else if(caunter2==0){
           //console.log("good combat stats but no engravings matched")
