@@ -718,39 +718,8 @@ document.getElementById("btn").onclick = function() {
 }
 
 
-function makeRows2(rows, cols) {
-  main__containerdevam2.style.setProperty('--grid-rows', rows);
-  main__containerdevam2.style.setProperty('--grid-cols', cols);
-  for (c = 0; c < (rows * cols); c++) {
-    let cell = document.createElement("div");
-    //cell.innerText = (c + 1);
-    cell.id=(c+1);
-    main__containerdevam2.appendChild(cell).className = "grid-item";
-   
-  };
-};
-function makeRows3(rows, cols) {
-  main__containerdevam3.style.setProperty('--grid-rows', rows);
-  main__containerdevam3.style.setProperty('--grid-cols', cols);
-  for (c = 0; c < (rows * cols); c++) {
-    let cell = document.createElement("div");
-    //cell.innerText = (c + 1);
-    cell.id=(c+1);
-    main__containerdevam3.appendChild(cell).className = "grid-item";
-   
-  };
-};
-function makeRows4(rows, cols) {
-  main__containerdevam4.style.setProperty('--grid-rows', rows);
-  main__containerdevam4.style.setProperty('--grid-cols', cols);
-  for (c = 0; c < (rows * cols); c++) {
-    let cell = document.createElement("div");
-    //cell.innerText = (c + 1);
-    cell.id=(c+1);
-    main__containerdevam4.appendChild(cell).className = "grid-item";
-   
-  };
-};
+
+
 
 
 
@@ -790,8 +759,9 @@ function necklace (value1,value2,value3,value4){
   console.log(value1,value2,value3,value4);
   if(value1!==value2 && value3!==value4){
     //query operations
-    makeRows2(4,5);
-    var gridcounter= 0;
+    document.getElementById("main__containerdevam2").innerHTML = "";//clearing div 
+    makeRowsnecklace(4,5);
+    var gridcounter= 20;
     for (var i = 0; i < 27; i++) {
       var counter1 = 0;
       for (var j = 2; j < 4; j++) {
@@ -833,6 +803,7 @@ function necklace (value1,value2,value3,value4){
           image2.id = "image2";
           var blocks=document.getElementById(gridcounter);
           blocks.innerHTML = "<span class = 'span1' >"+urlist[i][1]+"</span>";
+          //var block = document.getElementById("main__containerdevam2");
           blocks.appendChild(img);
           blocks.appendChild(image2);
           caunter2=0;
@@ -849,6 +820,7 @@ function necklace (value1,value2,value3,value4){
           image2.id = "image2";
           var blocks=document.getElementById(gridcounter);
           blocks.innerHTML = "<span class = 'span1' >"+urlist[i][1]+"</span>";
+          //var block = document.getElementById("main__containerdevam2");
           blocks.appendChild(img);
           blocks.appendChild(image2);
           caunter2=0;
@@ -869,6 +841,19 @@ function necklace (value1,value2,value3,value4){
     return;
   }  
 }
+
+function makeRowsnecklace(rows, cols) {
+  document.getElementById("main__containerdevam2").innerHTML = " ";
+  main__containerdevam2.style.setProperty('--grid-rows', rows);
+  main__containerdevam2.style.setProperty('--grid-cols', cols);
+  for (c = 0; c < (rows * cols); c++) {
+    let cell = document.createElement("div");
+    //cell.innerText = (c + 1);
+    cell.id=(c+21);
+    main__containerdevam2.appendChild(cell).className = "grid-item";
+   
+  };
+};
 
 document.getElementById("btn2").onclick = function() {
   necklace(depo5[0],depo6[0],depo3[0],depo4[0]);
@@ -912,8 +897,8 @@ let combatsEar = [
 function earring (value1,value2,value3){
   console.log(value1,value2,value3);
   if( value2!==value3){
-    makeRows3(4,5);
-    var gridcounter= 0;
+    makeRowsearrings(4,5);
+    var gridcounter= 40;
     for (var i = 0; i < 27; i++) {
       var counter1 = 0;
       for (var j = 2; j < 4; j++) {
@@ -947,6 +932,7 @@ function earring (value1,value2,value3){
           image2.id = "image2";
           var blocks=document.getElementById(gridcounter);
           blocks.innerHTML = "<span class = 'span1' >"+urlist[i][1]+"</span>";
+          //var block = document.getElementById("main__containerdevam3");
           blocks.appendChild(img);
           blocks.appendChild(image2);
           caunter2=0;
@@ -962,6 +948,7 @@ function earring (value1,value2,value3){
           image2.id = "image2";
           var blocks=document.getElementById(gridcounter);
           blocks.innerHTML = "<span class = 'span1' >"+urlist[i][1]+"</span>";
+          //var blocks = document.getElementById("main__containerdevam3");
           blocks.appendChild(img);
           blocks.appendChild(image2);
           caunter2=0;
@@ -979,6 +966,21 @@ function earring (value1,value2,value3){
     alert("Values cannot be equal");
   }  
 }
+
+
+
+function makeRowsearrings(rows, cols) {
+  document.getElementById("main__containerdevam3").innerHTML = " ";
+  main__containerdevam3.style.setProperty('--grid-rows', rows);
+  main__containerdevam3.style.setProperty('--grid-cols', cols);
+  for (c = 0; c < (rows * cols); c++) {
+    let cell = document.createElement("div");
+    //cell.innerText = (c + 1);
+    cell.id=(c+41);
+    main__containerdevam3.appendChild(cell).className = "grid-item";
+   
+  };
+};
 
 document.getElementById("btn3").onclick = function() {
   earring(depo7[0],depo8[0],depo9[0]);
@@ -1020,8 +1022,8 @@ let combatsring = [
 function ring (value1,value2,value3){
   console.log(value1,value2,value3);
   if( value2!==value3){
-    makeRows4(4,5);
-    var gridcounter= 0;
+    makeRowsrings(4,5);
+    var gridcounter= 60;
     for (var i = 0; i < 27; i++) {
       var counter1 = 0;
       for (var j = 2; j < 4; j++) {
@@ -1055,6 +1057,7 @@ function ring (value1,value2,value3){
           image2.id = "image2";
           var blocks=document.getElementById(gridcounter);
           blocks.innerHTML = "<span class = 'span1' >"+urlist[i][1]+"</span>";
+          //var block = document.getElementById("main__containerdevam4");
           blocks.appendChild(img);
           blocks.appendChild(image2);
           caunter2=0;
@@ -1070,6 +1073,7 @@ function ring (value1,value2,value3){
           image2.id = "image2";
           var blocks=document.getElementById(gridcounter);
           blocks.innerHTML = "<span class = 'span1' >"+urlist[i][1]+"</span>";
+          //var block = document.getElementById("main__containerdevam4");
           blocks.appendChild(img);
           blocks.appendChild(image2);
           caunter2=0;
@@ -1087,6 +1091,19 @@ function ring (value1,value2,value3){
     alert("Values cannot be equal");
   }  
 }
+
+function makeRowsrings(rows, cols) {
+  document.getElementById("main__containerdevam4").innerHTML = " ";
+  main__containerdevam4.style.setProperty('--grid-rows', rows);
+  main__containerdevam4.style.setProperty('--grid-cols', cols);
+  for (c = 0; c < (rows * cols); c++) {
+    let cell = document.createElement("div");
+    //cell.innerText = (c + 1);
+    cell.id=(c+61);
+    main__containerdevam4.appendChild(cell).className = "grid-item";
+   
+  };
+};
 
 document.getElementById("btn4").onclick = function() {
   ring(depo10[0],depo11[0],depo12[0]);

@@ -317,7 +317,7 @@
   width: 50px;
   height: 50px;
   position:relative;
-  left: 70px;
+  left: 0px;
   top: 280px;
   z-index: 1;
   border-radius:70%;
@@ -614,6 +614,42 @@ body {
   opacity: 1;
   pointer-events: auto;
 }
+
+/****************************************************************************************/
+.grid-item2 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  padding: 1em;
+  text-align: center;
+  width: 225px;
+  height: 328px;
+  margin-left: 60px;
+  margin-top: 30px;
+}
+
+
+.grid-item2 .span1 {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  background-image: url("https://raw.githubusercontent.com/okademirbilek/dontdismantleit/main/images/STRIKER.jpg");
+  position: absolute;
+  z-index: 1;
+  width:225px;
+  height:328px;
+  left: 25%;
+}
+
+.grid-item2:hover .span1 {
+  visibility: visible;
+  z-index: 2;
+}
+
 /*necklace--------------------------------------------------------------------------*/
 .main2 {
   background-color: #131313;
@@ -674,7 +710,7 @@ body {
   width: 50px;
   height: 50px;
   position:relative;
-  left: 70px;
+  left: 0px;
   top: -50px;
   z-index: 1;
   border-radius:70%;
